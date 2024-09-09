@@ -1,0 +1,24 @@
+ALGORITHM analyze_sentence
+VAR
+    length_counter = 0
+    word_counter = 1  # Assume at least one word
+    vowel_counter = 0
+    vowels = "aeiouAEIOU"
+    
+BEGIN
+    for char in sentence:
+        if char == '.':  # End of sentence
+            break
+        length_counter += 1
+        
+        if char in vowels:  # Check if the character is a vowel
+            vowel_counter += 1
+            
+        if char == ' ':  # Check if a space is encountered, indicating a new word
+            word_counter += 1
+    
+    # Output the results
+    print(f"Length of sentence (excluding period): {length_counter}")
+    print(f"Number of words: {word_counter}")
+    print(f"Number of vowels: {vowel_counter}")
+END
